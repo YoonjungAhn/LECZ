@@ -1,0 +1,365 @@
+VL_LECZinSum,County,State,CountyStat,FIPS_5digi
+148.0,California,6,Alameda County,6001
+1.0,California,6,Colusa County,6011
+110.0,California,6,Contra Costa County,6013
+,California,6,Del Norte County,6015
+6.0,California,6,Humboldt County,6023
+21.0,California,6,Los Angeles County,6037
+52.0,California,6,Marin County,6041
+,California,6,Mendocino County,6045
+5.0,California,6,Monterey County,6053
+27.0,California,6,Napa County,6055
+,California,6,Orange County,6059
+4.0,California,6,Sacramento County,6067
+11.0,California,6,San Diego County,6073
+45.0,California,6,San Francisco County,6075
+115.0,California,6,San Joaquin County,6077
+7.0,California,6,San Luis Obispo County,6079
+71.0,California,6,San Mateo County,6081
+10.0,California,6,Santa Barbara County,6083
+70.0,California,6,Santa Clara County,6085
+28.0,California,6,Santa Cruz County,6087
+37.0,California,6,Solano County,6095
+19.0,California,6,Sonoma County,6097
+,California,6,Stanislaus County,6099
+1.0,California,6,Sutter County,6101
+,California,6,Ventura County,6111
+25.0,California,6,Yolo County,6113
+1.0,Oregon,41,Clackamas County,41005
+70.0,Oregon,41,Clatsop County,41007
+12.0,Oregon,41,Columbia County,41009
+60.0,Oregon,41,Coos County,41011
+39.0,Oregon,41,Curry County,41015
+8.0,Oregon,41,Douglas County,41019
+6.0,Oregon,41,Lane County,41039
+123.0,Oregon,41,Lincoln County,41041
+436.0,Oregon,41,Multnomah County,41051
+522.0,Oregon,41,Tillamook County,41057
+121.0,Washington,53,Clallam County,53009
+75.0,Washington,53,Clark County,53011
+55.0,Washington,53,Cowlitz County,53015
+166.0,Washington,53,Grays Harbor County,53027
+135.0,Washington,53,Island County,53029
+5.0,Washington,53,Jefferson County,53031
+40.0,Washington,53,King County,53033
+28.0,Washington,53,Kitsap County,53035
+35.0,Washington,53,Mason County,53045
+68.0,Washington,53,Pacific County,53049
+126.0,Washington,53,Pierce County,53053
+26.0,Washington,53,San Juan County,53055
+169.0,Washington,53,Skagit County,53057
+,Washington,53,Skamania County,53059
+163.0,Washington,53,Snohomish County,53061
+31.0,Washington,53,Thurston County,53067
+41.0,Washington,53,Wahkiakum County,53069
+35.0,Washington,53,Whatcom County,53073
+198.0,Alabama,1,Baldwin County,1003
+1.0,Alabama,1,Clarke County,1025
+331.0,Alabama,1,Mobile County,1097
+1.0,Alabama,1,Monroe County,1099
+,Alabama,1,Washington County,1129
+154.0,Florida,12,Bay County,12005
+78.0,Florida,12,Brevard County,12009
+398.0,Florida,12,Broward County,12011
+,Florida,12,Calhoun County,12013
+111.0,Florida,12,Charlotte County,12015
+92.0,Florida,12,Citrus County,12017
+67.0,Florida,12,Clay County,12019
+885.0,Florida,12,Collier County,12021
+7.0,Florida,12,DeSoto County,12027
+56.0,Florida,12,Dixie County,12029
+247.0,Florida,12,Duval County,12031
+42.0,Florida,12,Escambia County,12033
+30.0,Florida,12,Flagler County,12035
+28.0,Florida,12,Franklin County,12037
+22.0,Florida,12,Gilchrist County,12041
+,Florida,12,Glades County,12043
+16.0,Florida,12,Gulf County,12045
+722.0,Florida,12,Hendry County,12051
+315.0,Florida,12,Hernando County,12053
+,Florida,12,Highlands County,12055
+300.0,Florida,12,Hillsborough County,12057
+,Florida,12,Holmes County,12059
+159.0,Florida,12,Indian River County,12061
+,Florida,12,Jefferson County,12065
+,Florida,12,Lafayette County,12067
+1.0,Florida,12,Lake County,12069
+6.0,Florida,12,Lee County,12071
+7.0,Florida,12,Leon County,12073
+34.0,Florida,12,Levy County,12075
+,Florida,12,Liberty County,12077
+271.0,Florida,12,Manatee County,12081
+2.0,Florida,12,Marion County,12083
+15.0,Florida,12,Martin County,12085
+12.0,Florida,12,Miami0Dade County,12086
+326.0,Florida,12,Monroe County,12087
+93.0,Florida,12,Nassau County,12089
+,Florida,12,Okaloosa County,12091
+,Florida,12,Okeechobee County,12093
+,Florida,12,Orange County,12095
+,Florida,12,Osceola County,12097
+307.0,Florida,12,Palm Beach County,12099
+574.0,Florida,12,Pasco County,12101
+2217.0,Florida,12,Pinellas County,12103
+97.0,Florida,12,Putnam County,12107
+120.0,Florida,12,St. Johns County,12109
+153.0,Florida,12,St. Lucie County,12111
+62.0,Florida,12,Santa Rosa County,12113
+242.0,Florida,12,Sarasota County,12115
+35.0,Florida,12,Seminole County,12117
+34.0,Florida,12,Taylor County,12123
+280.0,Florida,12,Volusia County,12127
+44.0,Florida,12,Wakulla County,12129
+1054.0,Florida,12,Walton County,12131
+13.0,Florida,12,Washington County,12133
+1.0,Georgia,13,Brantley County,13025
+166.0,Georgia,13,Bryan County,13029
+553.0,Georgia,13,Camden County,13039
+1.0,Georgia,13,Charlton County,13049
+121.0,Georgia,13,Chatham County,13051
+4.0,Georgia,13,Effingham County,13103
+114.0,Georgia,13,Glynn County,13127
+166.0,Georgia,13,Liberty County,13179
+,Georgia,13,Long County,13183
+20.0,Georgia,13,McIntosh County,13191
+1.0,Georgia,13,Wayne County,13305
+,Mississippi,28,George County,28039
+54.0,Mississippi,28,Hancock County,28045
+224.0,Mississippi,28,Harrison County,28047
+249.0,Mississippi,28,Jackson County,28059
+,Mississippi,28,Pearl River County,28109
+327.0,North Carolina,37,Beaufort County,37013
+10.0,North Carolina,37,Bertie County,37015
+6.0,North Carolina,37,Bladen County,37017
+547.0,North Carolina,37,Brunswick County,37019
+63.0,North Carolina,37,Camden County,37029
+151.0,North Carolina,37,Carteret County,37031
+82.0,North Carolina,37,Chowan County,37041
+13.0,North Carolina,37,Columbus County,37047
+240.0,North Carolina,37,Craven County,37049
+150.0,North Carolina,37,Currituck County,37053
+99.0,North Carolina,37,Dare County,37055
+4.0,North Carolina,37,Duplin County,37061
+,North Carolina,37,Edgecombe County,37065
+20.0,North Carolina,37,Gates County,37073
+,North Carolina,37,Greene County,37079
+,North Carolina,37,Halifax County,37083
+1.0,North Carolina,37,Hertford County,37091
+98.0,North Carolina,37,Hyde County,37095
+57.0,North Carolina,37,Jones County,37103
+6.0,North Carolina,37,Lenoir County,37107
+,North Carolina,37,Martin County,37117
+212.0,North Carolina,37,New Hanover County,37129
+,North Carolina,37,Northampton County,37131
+48.0,North Carolina,37,Onslow County,37133
+191.0,North Carolina,37,Pamlico County,37137
+153.0,North Carolina,37,Pasquotank County,37139
+72.0,North Carolina,37,Pender County,37141
+101.0,North Carolina,37,Perquimans County,37143
+13.0,North Carolina,37,Pitt County,37147
+1.0,North Carolina,37,Sampson County,37163
+14.0,North Carolina,37,Tyrrell County,37177
+196.0,North Carolina,37,Washington County,37187
+400.0,South Carolina,45,Beaufort County,45013
+15.0,South Carolina,45,Berkeley County,45015
+684.0,South Carolina,45,Charleston County,45019
+150.0,South Carolina,45,Colleton County,45029
+20.0,South Carolina,45,Dorchester County,45035
+1.0,South Carolina,45,Florence County,45041
+208.0,South Carolina,45,Georgetown County,45043
+2.0,South Carolina,45,Hampton County,45049
+713.0,South Carolina,45,Horry County,45051
+15.0,South Carolina,45,Jasper County,45053
+2.0,South Carolina,45,Marion County,45067
+25.0,South Carolina,45,Williamsburg County,45089
+35.0,Connecticut,9,Fairfield County,9001
+21.0,Connecticut,9,Hartford County,9003
+49.0,Connecticut,9,Middlesex County,9007
+176.0,Connecticut,9,New Haven County,9009
+32.0,Connecticut,9,New London County,9011
+24.0,Delaware,10,Kent County,10001
+18.0,Delaware,10,New Castle County,10003
+220.0,Delaware,10,Sussex County,10005
+7.0,District Of Columbia,11,District Of Columbia,11001
+41.0,Maine,23,Cumberland County,23005
+9.0,Maine,23,Hancock County,23009
+3.0,Maine,23,Kennebec County,23011
+13.0,Maine,23,Knox County,23013
+7.0,Maine,23,Lincoln County,23015
+7.0,Maine,23,Penobscot County,23019
+8.0,Maine,23,Sagadahoc County,23023
+,Maine,23,Waldo County,23027
+2.0,Maine,23,Washington County,23029
+58.0,Maine,23,York County,23031
+108.0,Maryland,24,Anne Arundel County,24003
+94.0,Maryland,24,Baltimore County,24005
+10.0,Maryland,24,Calvert County,24009
+14.0,Maryland,24,Caroline County,24011
+24.0,Maryland,24,Cecil County,24015
+20.0,Maryland,24,Charles County,24017
+61.0,Maryland,24,Dorchester County,24019
+12.0,Maryland,24,Harford County,24025
+,Maryland,24,Howard County,24027
+25.0,Maryland,24,Kent County,24029
+,Maryland,24,Montgomery County,24031
+18.0,Maryland,24,Prince George's County,24033
+24.0,Maryland,24,Queen Anne's County,24035
+46.0,Maryland,24,St. Mary's County,24037
+206.0,Maryland,24,Somerset County,24039
+21.0,Maryland,24,Talbot County,24041
+47.0,Maryland,24,Wicomico County,24045
+60.0,Maryland,24,Worcester County,24047
+19.0,Maryland,24,Baltimore City,24510
+204.0,Massachusetts,25,Barnstable County,25001
+204.0,Massachusetts,25,Bristol County,25005
+108.0,Massachusetts,25,Dukes County,25007
+101.0,Massachusetts,25,Essex County,25009
+,Massachusetts,25,Hampden County,25013
+119.0,Massachusetts,25,Middlesex County,25017
+155.0,Massachusetts,25,Nantucket County,25019
+16.0,Massachusetts,25,Norfolk County,25021
+321.0,Massachusetts,25,Plymouth County,25023
+164.0,Massachusetts,25,Suffolk County,25025
+71.0,New Hampshire,33,Rockingham County,33015
+1.0,New Hampshire,33,Strafford County,33017
+57.0,New Jersey,34,Atlantic County,34001
+,New Jersey,34,Bergen County,34003
+92.0,New Jersey,34,Burlington County,34005
+2.0,New Jersey,34,Camden County,34007
+300.0,New Jersey,34,Cape May County,34009
+2.0,New Jersey,34,Cumberland County,34011
+71.0,New Jersey,34,Essex County,34013
+61.0,New Jersey,34,Gloucester County,34015
+,New Jersey,34,Hudson County,34017
+,New Jersey,34,Mercer County,34021
+,New Jersey,34,Middlesex County,34023
+537.0,New Jersey,34,Monmouth County,34025
+5.0,New Jersey,34,Ocean County,34029
+,New Jersey,34,Passaic County,34031
+114.0,New Jersey,34,Salem County,34033
+,New Jersey,34,Somerset County,34035
+,New Jersey,34,Union County,34039
+22.0,New York,36,Albany County,36001
+84.0,New York,36,Bronx County,36005
+1.0,New York,36,Columbia County,36021
+2.0,New York,36,Dutchess County,36027
+3.0,New York,36,Greene County,36039
+207.0,New York,36,Kings County,36047
+1.0,New York,36,Nassau County,36059
+16.0,New York,36,New York County,36061
+,New York,36,Orange County,36071
+,New York,36,Putnam County,36079
+194.0,New York,36,Queens County,36081
+16.0,New York,36,Rensselaer County,36083
+129.0,New York,36,Richmond County,36085
+,New York,36,Rockland County,36087
+5.0,New York,36,Saratoga County,36091
+316.0,New York,36,Suffolk County,36103
+3.0,New York,36,Ulster County,36111
+20.0,New York,36,Westchester County,36119
+3.0,Pennsylvania,42,Bucks County,42017
+36.0,Pennsylvania,42,Delaware County,42045
+86.0,Pennsylvania,42,Philadelphia County,42101
+40.0,Rhode Island,44,Bristol County,44001
+204.0,Rhode Island,44,Kent County,44003
+78.0,Rhode Island,44,Newport County,44005
+102.0,Rhode Island,44,Providence County,44007
+62.0,Rhode Island,44,Washington County,44009
+,Virginia,51,Accomack County,51001
+,Virginia,51,Arlington County,51013
+,Virginia,51,Caroline County,51033
+,Virginia,51,Charles City County,51036
+1.0,Virginia,51,Chesterfield County,51041
+24.0,Virginia,51,Essex County,51057
+12.0,Virginia,51,Fairfax County,51059
+29.0,Virginia,51,Gloucester County,51073
+,Virginia,51,Hanover County,51085
+2.0,Virginia,51,Henrico County,51087
+,Virginia,51,Isle of Wight County,51093
+17.0,Virginia,51,James City County,51095
+6.0,Virginia,51,King and Queen County,51097
+7.0,Virginia,51,King George County,51099
+26.0,Virginia,51,King William County,51101
+35.0,Virginia,51,Lancaster County,51103
+,Virginia,51,Mathews County,51115
+26.0,Virginia,51,Middlesex County,51119
+34.0,Virginia,51,New Kent County,51127
+18.0,Virginia,51,Northampton County,51131
+,Virginia,51,Northumberland County,51133
+25.0,Virginia,51,Prince George County,51149
+3.0,Virginia,51,Prince William County,51153
+1.0,Virginia,51,Richmond County,51159
+14.0,Virginia,51,Southampton County,51175
+,Virginia,51,Spotsylvania County,51177
+2.0,Virginia,51,Stafford County,51179
+,Virginia,51,Surry County,51181
+,Virginia,51,Westmoreland County,51193
+18.0,Virginia,51,York County,51199
+,Virginia,51,Alexandria City,51510
+107.0,Virginia,51,Chesapeake City,51550
+,Virginia,51,Colonial Heights City,51570
+,Virginia,51,Franklin City,51620
+,Virginia,51,Fredericksburg City,51630
+86.0,Virginia,51,Hampton City,51650
+,Virginia,51,Hopewell City,51670
+21.0,Virginia,51,Newport News City,51700
+109.0,Virginia,51,Norfolk City,51710
+9.0,Virginia,51,Petersburg City,51730
+8.0,Virginia,51,Poquoson City,51735
+,Virginia,51,Portsmouth City,51740
+3.0,Virginia,51,Richmond City,51760
+4.0,Virginia,51,Suffolk City,51800
+139.0,Virginia,51,Virginia Beach City,51810
+,Virginia,51,Williamsburg City,51830
+,Louisiana,22,Acadia Parish,22001
+,Louisiana,22,Allen Parish,22003
+,Louisiana,22,Ascension Parish,22005
+,Louisiana,22,Assumption Parish,22007
+,Louisiana,22,Beauregard Parish,22011
+2.0,Louisiana,22,Calcasieu Parish,22019
+62.0,Louisiana,22,Cameron Parish,22023
+12.0,Louisiana,22,East Baton Rouge Parish,22033
+363.0,Louisiana,22,Iberia Parish,22045
+,Louisiana,22,Iberville Parish,22047
+2.0,Louisiana,22,Jefferson Parish,22051
+,Louisiana,22,Jefferson Davis Parish,22053
+118.0,Louisiana,22,Lafayette Parish,22055
+118.0,Louisiana,22,Lafourche Parish,22057
+1.0,Louisiana,22,Livingston Parish,22063
+908.0,Louisiana,22,Orleans Parish,22071
+2.0,Louisiana,22,Plaquemines Parish,22075
+,Louisiana,22,Pointe Coupee Parish,22077
+,Louisiana,22,St. Bernard Parish,22087
+445.0,Louisiana,22,St. Charles Parish,22089
+54.0,Louisiana,22,St. James Parish,22093
+,Louisiana,22,St. John the Baptist Parish,22095
+1.0,Louisiana,22,St. Landry Parish,22097
+322.0,Louisiana,22,St. Martin Parish,22099
+1.0,Louisiana,22,St. Mary Parish,22101
+1089.0,Louisiana,22,St. Tammany Parish,22103
+87.0,Louisiana,22,Tangipahoa Parish,22105
+,Louisiana,22,Terrebonne Parish,22109
+13.0,Louisiana,22,Vermilion Parish,22113
+5.0,Louisiana,22,West Baton Rouge Parish,22121
+32.0,Texas,48,Aransas County,48007
+428.0,Texas,48,Brazoria County,48039
+35.0,Texas,48,Calhoun County,48057
+61.0,Texas,48,Cameron County,48061
+42.0,Texas,48,Chambers County,48071
+479.0,Texas,48,Galveston County,48167
+6.0,Texas,48,Hardin County,48199
+2.0,Texas,48,Harris County,48201
+6.0,Texas,48,Jackson County,48239
+1.0,Texas,48,Jasper County,48241
+6211.0,Texas,48,Jefferson County,48245
+,Texas,48,Kenedy County,48261
+1.0,Texas,48,Kleberg County,48273
+8.0,Texas,48,Liberty County,48291
+25.0,Texas,48,Matagorda County,48321
+,Texas,48,Newton County,48351
+240.0,Texas,48,Nueces County,48355
+101.0,Texas,48,Orange County,48361
+33.0,Texas,48,Refugio County,48391
+,Texas,48,San Patricio County,48409
+,Texas,48,Victoria County,48469
+2.0,Texas,48,Willacy County,48489
