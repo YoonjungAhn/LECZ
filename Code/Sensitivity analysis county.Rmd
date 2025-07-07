@@ -1,0 +1,309 @@
+---
+title: "Sensitivity analysis county"
+output: html_document
+date: "2025-05-15"
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(ggspatial)
+library(marmap)
+library(raster)
+library(extrafont)
+library(ggplot2)
+library(sf)
+library(tidycensus)
+library(dplyr)
+library(sf)
+library(terra)
+library(dplyr)
+library(tidyr)
+library(tigris)
+```
+
+```{r}
+# Specify the path to the Geodatabase
+gdb_path <- "./counties.gdb"
+
+# Read the data using st_read
+# If there are multiple layers, you might need to specify which layer to read
+lecz_data <- st_read(gdb_path)
+
+# To check what layers are available in the Geodatabase, you can use:
+layers <- st_layers(gdb_path)
+print(layers)
+```
+
+# undertanding  the proportional differnce
+```{r}
+# Step 1: Create a new dataframe with relevant columns
+library(dplyr)
+
+# Define the population products
+products <- c("CPOP", "HPOP", "NPOP", "GHSPOP", "GPWPOP", "GPWUN")
+
+# Step 2: Calculate proportions and range per county
+lecz_df <- st_drop_geometry(lecz_data)
+
+proportion_ranges <- lecz_df %>%
+  rowwise() %>%
+  mutate(
+    # Calculate proportions for each product
+    CPOP_prop   = CPOP_IN / CPOP_TOT,
+    HPOP_prop   = HPOP_IN / HPOP_TOT,
+    NPOP_prop   = NPOP_IN / NPOP_TOT,
+    GHSPOP_prop = GHSPOP_IN / GHSPOP_TOT,
+    GPWPOP_prop = GPWPOP_IN / GPWPOP_TOT,
+    GPWUN_prop  = GPWUN_IN / GPWUN_TOT,
+    
+    # Get range across all proportions
+    prop_min = min(c_across(ends_with("_prop")), na.rm = TRUE),
+    prop_max = max(c_across(ends_with("_prop")), na.rm = TRUE),
+    prop_range = prop_max - prop_min
+  ) %>%
+  ungroup() %>%
+  dplyr::select(FIPSSTCO, starts_with("CPOP_prop"), starts_with("HPOP_prop"),
+         starts_with("NPOP_prop"), starts_with("GHSPOP_prop"),
+         starts_with("GPWPOP_prop"), starts_with("GPWUN_prop"),
+         prop_min, prop_max, prop_range)
+
+# View results
+
+# County with minimum difference
+min_diff_county <- proportion_ranges %>%
+  filter(prop_range == min(prop_range, na.rm = TRUE))
+
+# County with maximum difference
+max_diff_county <- proportion_ranges %>%
+  filter(prop_range == max(prop_range, na.rm = TRUE))
+
+# Print them
+print("County with MINIMUM proportional difference:")
+print(min_diff_county)
+
+print("County with MAXIMUM proportional difference:")
+print(max_diff_county)
+
+```
+
+#for 1990
+```{r}
+lecz_data <- st_read(gdb_path, layer = "county_1990")
+head(lecz_data)
+
+data_in <- as.data.frame(lecz_data) %>%
+  dplyr::select(FIPSSTCO, contains("_IN"))
+data_in$year <- 1990
+```
+
+
+#for 2020
+```{r}
+lecz_data <- st_read(gdb_path, layer = "county_2020")
+head(lecz_data)
+
+data_in <- as.data.frame(lecz_data) %>%
+  dplyr::select(FIPSSTCO, contains("_IN"))%>%
+  dplyr::select(-c('AREA_IN'))
+  
+data_in$year <- 2020
+
+```
+
+#identifying the big difference
+```{r}
+library(dplyr)
+
+# Define the population columns of interest
+pop_cols <- c("CPOP_IN", "HPOP_IN", "NPOP_IN", "GHSPOP_IN", "GPWPOP_IN", "GPWUN_IN")
+
+# Calculate the max - min difference for each county
+data_with_diff <- data_in %>%
+  rowwise() %>%
+  mutate(
+    pop_diff = max(c_across(all_of(pop_cols)), na.rm = TRUE) -
+               min(c_across(all_of(pop_cols)), na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  arrange(desc(pop_diff)) %>%
+  mutate(diff_rank = row_number())
+
+# View top counties
+head(data_with_diff)
+
+```
+
+```{r}
+# Vector of counties you want to include (FIPS codes as characters)
+# Get top 10 counties based on population difference
+top_counties <- data_with_diff %>%
+  slice_head(n = 5) %>%
+  dplyr::select(FIPSSTCO)
+
+# Extract FIPS codes as character vector
+selected_fips <- top_counties$FIPSSTCO
+
+# Create a mapping of FIPS to label names for y-axis
+
+# Load county names from shapefile (you probably already have this)
+county_names <- counties(cb = TRUE, year = 2020) %>%
+  mutate(FIPSSTCO = GEOID) %>%
+  dplyr::select(FIPSSTCO, NAME, STATEFP)
+
+# Use fips_codes dataset to get state names
+data("fips_codes", package = "tigris")
+
+state_names <- fips_codes %>%
+  dplyr::select(state_code, state_name) %>%
+  distinct()
+
+# Merge to get full label
+fips_label_df <- top_counties %>%
+  left_join(county_names, by = "FIPSSTCO") %>%
+  left_join(state_names, by = c("STATEFP" = "state_code")) %>%
+  mutate(label = paste(NAME, state_name, sep = ", ")) %>%
+  dplyr::select(FIPSSTCO, label)
+
+# Turn into a named vector
+fips_labels <- setNames(fips_label_df$label, fips_label_df$FIPSSTCO)
+
+# Reshape the data from wide to long format
+subdf_filtered <- data_in %>%
+  filter(FIPSSTCO %in% selected_fips)%>%
+  pivot_longer(cols = ends_with("_IN"), names_to = "SOURCE", values_to = "mean_value") %>%
+  mutate(
+    SOURCE = gsub("_IN", "", SOURCE),
+    FIPSSTCO = as.character(FIPSSTCO),
+    state_label = fips_labels[FIPSSTCO]
+  ) 
+
+source_labels <- c(
+  "CPOP" = "CENSUSPOP",
+  "HPOP" = "HISDACPOP",
+  "NPOP" = "NLCDPOP",
+  "GHSPOP" = "GHSPOP",
+  "GPWPOP" = "GPWPOP",
+  "GPWUN" = "GPWUN",
+  "LSCPOP" = "LANDSCANPOP",
+  "WPPOP" = "WORLDPOP"
+)
+
+
+# Sort fips_labels alphabetically by label names
+sorted_labels <- sort(fips_labels)
+
+# Reassign selected_fips in sorted order
+selected_fips <- names(sorted_labels)
+
+# Update the state_label column in your main dataframe
+subdf_filtered <- subdf_filtered %>%
+  mutate(state_label = sorted_labels[FIPSSTCO]) %>%
+  mutate(state_label = factor(state_label, levels = sorted_labels))%>%
+  mutate(SOURCE = recode(SOURCE, !!!source_labels))
+
+```
+
+```{r}
+library(RColorBrewer)
+library(ggplot2)
+library(ggbreak)
+
+source_levels <- unname(source_labels)
+#source_colors <- RColorBrewer::brewer.pal(n = length(source_levels), name = "Set1")
+source_colors <- c(
+  "CENSUSPOP"   = "#E41A1C",
+  "HISDACPOP"   = "#377EB8",
+  "NLCDPOP"     = "#4DAF4A",
+  "GHSPOP"      = "#984EA3",
+  "GPWPOP"      = "#FF7F00",
+  "GPWUN"       = "#fec44f",   # updated here
+  "LANDSCANPOP" = "#A65628",
+  "WORLDPOP"    = "#F781BF"
+)
+
+names(source_colors) <- source_levels
+
+p <- ggplot(subdf_filtered, aes(x = mean_value / 1e6, y = "", col = SOURCE)) +
+  geom_point(size = 4, position = position_jitter(w = 0, h = 0.15), alpha = 0.7) +
+  scale_color_manual(values = source_colors, drop = FALSE) +
+  facet_wrap(~ state_label, ncol = 1, scales = "free_x") +
+  labs(x = "Population (millions)", y = NULL, title = "2020") +
+  theme_bw(base_size = 16) +
+  theme(
+    legend.position = "bottom",
+    axis.text = element_text(size = 14),
+    axis.title = element_text(size = 16),
+    legend.text = element_text(size = 14),
+    legend.title = element_text(size = 14),
+    strip.text = element_text(size = 14),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+  )
+p
+
+```
+
+```{r}
+library(tigris)
+library(sf)
+library(purrr)
+library(ggplot2)
+
+options(tigris_use_cache = TRUE)
+
+# Download county shapefiles
+counties <- counties(cb = TRUE, year = 2020)  # or 2022
+
+# Select only counties you want
+selected_counties <- counties %>%
+  filter(GEOID %in% selected_fips)
+
+# Function to plot a single county map
+ make_county_map <- function(fips_code) {
+   state_fips <- substr(fips_code, 1, 2)
+   state_shape <- counties %>%
+     filter(STATEFP == state_fips)
+   county_shape <- state_shape %>%
+     filter(GEOID == fips_code)
+   ggplot() +
+     geom_sf(data = state_shape, fill = "gray90", color = "gray60", size = 0.2) +
+     geom_sf(data = county_shape, fill = "red", color = "red", size = 0.005) +
+     theme_void() +
+     theme(plot.title = element_blank())
+   }
+
+# Create mini maps using sorted FIPS
+mini_maps <- map(selected_fips, make_county_map)
+mini_maps
+
+
+# Use fips_labels created earlier
+#mini_maps <- map2(names(fips_labels), fips_labels, make_county_map)
+
+
+
+```
+
+```{r}
+library(patchwork)
+
+# Ensure map_column is stacked vertically
+map_column <- wrap_plots(mini_maps, ncol = 1)
+
+# Attach the maps (left) and dot plot (right) horizontally
+#final_plot <- map_column | p + plot_layout(widths = c(1,0.1))
+
+p <- p + theme(plot.margin = margin(3, -0.5, 3, -0.5))  # removes inner space
+final_plot <- map_column | p + plot_layout(widths = c(1, 0.05))  # adjusts layout spacing
+
+# Show the combined plot
+final_plot
+
+ggsave(
+  filename = "./Figures/SensitivityAnalysis_Countylevel.png",
+  plot = final_plot,
+  width = 15,     # Adjust width as needed
+  height = 2 * length(mini_maps),  # Make height proportional to number of rows
+  dpi = 300)
+```
+
