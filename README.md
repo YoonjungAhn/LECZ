@@ -121,4 +121,4 @@ This project is released under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or issues, contact **Yoonjung Ahn** at [y943a214@ku.edu](mailto:y943a214@ku.edu).
+For questions or issues, contact **Yoonjung Ahn** at [yjahn@ku.edu](mailto:y943a214@ku.edu).
